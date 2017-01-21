@@ -1,15 +1,27 @@
 {
-  "name": "WebSocket",
+  "name": "Evoque",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava",
+    "lint": "standard",
+    "dev": "chokidar '**/*.js' -c 'standard && ava' "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ws": "^1.1.1"
+  },
+  "pre-commit": [
+    "lint", 
+    "test"
+  ],
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "chokidar-cli": "^1.2.0",
+    "precommit-hook": "^3.0.0",
+    "standard": "^8.6.0"
   }
 }
